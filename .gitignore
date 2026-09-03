@@ -1,0 +1,28 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build
+[Bb]in/
+[Oo]bj/
+
+# NuGet
+packages/
+
+# User-specific files
+*.user
+*.rsuser
+
+# Logs
+*.log
+
+# Environment / secrets
+appsettings.Development.json
+
+# Node / NextJS
+node_modules/
+.next/
+out/
+.env
+.env.local
