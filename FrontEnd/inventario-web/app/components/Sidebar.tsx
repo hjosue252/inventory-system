@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 
@@ -42,43 +42,43 @@ export default function Sidebar({
         {
             nombre: "Dashboard",
             ruta: "/dashboard",
-            icono: "⌂",
+            icono: "âŒ‚",
             soloAdmin: false,
         },
         {
             nombre: "Productos",
             ruta: "/productos",
-            icono: "▣",
+            icono: "â–£",
             soloAdmin: true,
         },
         {
             nombre: "Proveedores",
             ruta: "/proveedores",
-            icono: "▰",
+            icono: "â–°",
             soloAdmin: true,
         },
         {
             nombre: "Clientes",
             ruta: "/clientes",
-            icono: "♙",
+            icono: "â™™",
             soloAdmin: true,
         },
         {
             nombre: "Compras",
             ruta: "/compras",
-            icono: "🛒",
+            icono: "ðŸ›’",
             soloAdmin: false,
         },
         {
             nombre: "Ventas",
             ruta: "/ventas",
-            icono: "▤",
+            icono: "â–¤",
             soloAdmin: false,
         },
         {
             nombre: "Reportes",
             ruta: "/reportes",
-            icono: "▥",
+            icono: "â–¥",
             soloAdmin: false,
         },
     ];
@@ -105,16 +105,16 @@ export default function Sidebar({
                         </h1>
 
                         <p className="text-xs text-slate-400">
-                            Sistema de gestión
+                            Sistema de gestiÃ³n
                         </p>
                     </div>
                 </div>
             </div>
 
-            {/* NAVEGACIÓN */}
+            {/* NAVEGACIÃ“N */}
             <nav className="flex-1 overflow-y-auto px-4 py-6">
                 <p className="mb-3 px-3 text-[11px] font-bold uppercase tracking-widest text-slate-500">
-                    Menú principal
+                    MenÃº principal
                 </p>
 
                 <div className="space-y-1">
@@ -179,7 +179,7 @@ export default function Sidebar({
 
                         <div className="min-w-0">
                             <p className="text-[11px] text-slate-500">
-                                Sesión actual
+                                SesiÃ³n actual
                             </p>
 
                             <p className="mt-0.5 truncate text-sm font-semibold text-slate-200">
@@ -209,11 +209,11 @@ export default function Sidebar({
                     className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-semibold text-red-400 transition hover:bg-red-500/10 hover:text-red-300"
                 >
                     <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-red-500/10 text-lg">
-                        ↪
+                        â†ª
                     </span>
 
                     <span>
-                        Cerrar sesión
+                        Cerrar sesiÃ³n
                     </span>
                 </button>
             </div>

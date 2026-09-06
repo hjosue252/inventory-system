@@ -1,5 +1,6 @@
-"use client";
+﻿"use client";
 
+import { API_URL } from "../../lib/api";
 import { FormEvent, useEffect, useState } from "react";
 
 interface Producto {
@@ -37,7 +38,7 @@ export default function Productos() {
 
         try {
             const response = await fetch(
-                "https://localhost:7166/api/Productos",
+                API_URL + "/api/Productos",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -108,8 +109,8 @@ export default function Productos() {
         try {
             const url =
                 editandoId === null
-                    ? "https://localhost:7166/api/Productos"
-                    : `https://localhost:7166/api/Productos/${editandoId}`;
+                    ? API_URL + "/api/Productos"
+                    : `${API_URL}/api/Productos/${editandoId}`;
 
             const method = editandoId === null ? "POST" : "PUT";
 
@@ -130,7 +131,7 @@ export default function Productos() {
 
             if (response.status === 403) {
                 setError(
-                    "No tienes permisos para realizar esta acción."
+                    "No tienes permisos para realizar esta acciÃ³n."
                 );
                 return;
             }
@@ -182,7 +183,7 @@ export default function Productos() {
 
     const eliminarProducto = async (id: number) => {
         const confirmar = window.confirm(
-            "¿Estás seguro de que deseas eliminar este producto?"
+            "Â¿EstÃ¡s seguro de que deseas eliminar este producto?"
         );
 
         if (!confirmar) {
@@ -201,7 +202,7 @@ export default function Productos() {
 
         try {
             const response = await fetch(
-                `https://localhost:7166/api/Productos/${id}`,
+                `${API_URL}/api/Productos/${id}`,
                 {
                     method: "DELETE",
                     headers: {
@@ -258,7 +259,7 @@ export default function Productos() {
                 <div className="flex flex-wrap items-center justify-between gap-4 px-8 py-6">
                     <div>
                         <p className="text-sm font-medium text-blue-600">
-                            Gestión de inventario
+                            GestiÃ³n de inventario
                         </p>
 
                         <h1 className="mt-1 text-3xl font-bold text-slate-800">
@@ -276,13 +277,13 @@ export default function Productos() {
                         }}
                         className="rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-600 shadow-sm transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600"
                     >
-                        ← Dashboard
+                        â† Dashboard
                     </button>
                 </div>
             </div>
 
             <section className="p-8">
-                {/* Estadísticas */}
+                {/* EstadÃ­sticas */}
                 <div className="mb-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                         <div className="flex items-center justify-between">
@@ -297,7 +298,7 @@ export default function Productos() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-2xl">
-                                📦
+                                ðŸ“¦
                             </div>
                         </div>
                     </div>
@@ -315,7 +316,7 @@ export default function Productos() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-2xl">
-                                📊
+                                ðŸ“Š
                             </div>
                         </div>
                     </div>
@@ -333,7 +334,7 @@ export default function Productos() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-2xl">
-                                ⚠️
+                                âš ï¸
                             </div>
                         </div>
                     </div>
@@ -382,7 +383,7 @@ export default function Productos() {
                             </h2>
 
                             <p className="mt-1 text-sm text-slate-500">
-                                Completa la información del producto.
+                                Completa la informaciÃ³n del producto.
                             </p>
                         </div>
 
@@ -433,7 +434,7 @@ export default function Productos() {
 
                             <div className="md:col-span-2">
                                 <label className="mb-2 block text-sm font-semibold text-slate-700">
-                                    Descripción
+                                    DescripciÃ³n
                                 </label>
 
                                 <textarea
@@ -441,7 +442,7 @@ export default function Productos() {
                                     onChange={(e) =>
                                         setDescripcion(e.target.value)
                                     }
-                                    placeholder="Describe las características del producto..."
+                                    placeholder="Describe las caracterÃ­sticas del producto..."
                                     maxLength={500}
                                     rows={4}
                                     className="w-full resize-none rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
@@ -489,11 +490,11 @@ export default function Productos() {
                     </div>
                 )}
 
-                {/* Mensaje de éxito */}
+                {/* Mensaje de Ã©xito */}
                 {mensaje && (
                     <div className="mb-5 flex items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm font-medium text-emerald-700">
                         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 font-bold">
-                            ✓
+                            âœ“
                         </span>
 
                         {mensaje}
@@ -538,7 +539,7 @@ export default function Productos() {
                                         </th>
 
                                         <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wide text-slate-500">
-                                            Descripción
+                                            DescripciÃ³n
                                         </th>
 
                                         <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wide text-slate-500">
@@ -580,7 +581,7 @@ export default function Productos() {
                                             <td className="max-w-xs px-6 py-5 text-sm text-slate-500">
                                                 <p className="truncate">
                                                     {producto.descripcion ||
-                                                        "Sin descripción"}
+                                                        "Sin descripciÃ³n"}
                                                 </p>
                                             </td>
 
@@ -635,7 +636,7 @@ export default function Productos() {
                                                 className="px-6 py-12 text-center"
                                             >
                                                 <div className="text-4xl">
-                                                    📦
+                                                    ðŸ“¦
                                                 </div>
 
                                                 <p className="mt-3 font-semibold text-slate-600">
@@ -643,7 +644,7 @@ export default function Productos() {
                                                 </p>
 
                                                 <p className="mt-1 text-sm text-slate-400">
-                                                    Los productos que agregues aparecerán aquí.
+                                                    Los productos que agregues aparecerÃ¡n aquÃ­.
                                                 </p>
                                             </td>
                                         </tr>
@@ -657,3 +658,4 @@ export default function Productos() {
         </main>
     );
 }
+

@@ -1,5 +1,6 @@
-"use client";
+﻿"use client";
 
+import { API_URL } from "./lib/api";
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -18,7 +19,7 @@ export default function Home() {
         setCargando(true);
 
         try {
-            const response = await fetch("https://localhost:7166/api/Auth/login", {
+            const response = await fetch(API_URL + "/api/Auth/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -32,7 +33,7 @@ export default function Home() {
             const data = await response.json();
 
             if (!response.ok) {
-                setMensaje(data.message || "Correo o contraseña incorrectos.");
+                setMensaje(data.message || "Correo o contraseÃ±a incorrectos.");
                 return;
             }
 
@@ -45,7 +46,7 @@ export default function Home() {
             console.error(error);
 
             setMensaje(
-                "No se pudo conectar con el servidor. Verifica que la API esté ejecutándose."
+                "No se pudo conectar con el servidor. Verifica que la API estÃ© ejecutÃ¡ndose."
             );
         } finally {
             setCargando(false);
@@ -60,13 +61,13 @@ export default function Home() {
                 </h1>
 
                 <p className="mb-6 text-center text-gray-500">
-                    Iniciar sesión
+                    Iniciar sesiÃ³n
                 </p>
 
                 <form onSubmit={handleLogin} className="space-y-4">
                     <div>
                         <label className="mb-1 block text-sm font-medium">
-                            Correo electrónico
+                            Correo electrÃ³nico
                         </label>
 
                         <input
@@ -81,7 +82,7 @@ export default function Home() {
 
                     <div>
                         <label className="mb-1 block text-sm font-medium">
-                            Contraseña
+                            ContraseÃ±a
                         </label>
 
                         <input
@@ -99,7 +100,7 @@ export default function Home() {
                         disabled={cargando}
                         className="w-full rounded-md bg-blue-600 p-3 font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
                     >
-                        {cargando ? "Iniciando sesión..." : "Iniciar sesión"}
+                        {cargando ? "Iniciando sesiÃ³n..." : "Iniciar sesiÃ³n"}
                     </button>
                 </form>
 
@@ -112,3 +113,4 @@ export default function Home() {
         </main>
     );
 }
+

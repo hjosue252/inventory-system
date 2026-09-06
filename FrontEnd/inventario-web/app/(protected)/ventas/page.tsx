@@ -1,5 +1,6 @@
-"use client";
+﻿"use client";
 
+import { API_URL } from "../../lib/api";
 import { FormEvent, useEffect, useState } from "react";
 
 interface Producto {
@@ -66,19 +67,19 @@ export default function Ventas() {
                 clientesResponse,
                 ventasResponse,
             ] = await Promise.all([
-                fetch("https://localhost:7166/api/Productos", {
+                fetch(API_URL + "/api/Productos", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 }),
 
-                fetch("https://localhost:7166/api/Clientes", {
+                fetch(API_URL + "/api/Clientes", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 }),
 
-                fetch("https://localhost:7166/api/Ventas", {
+                fetch(API_URL + "/api/Ventas", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -226,7 +227,7 @@ export default function Ventas() {
 
         if (detalleInvalido) {
             setError(
-                "Todos los productos deben tener una cantidad y precio de venta válidos."
+                "Todos los productos deben tener una cantidad y precio de venta vÃ¡lidos."
             );
             return;
         }
@@ -256,7 +257,7 @@ export default function Ventas() {
 
         try {
             const response = await fetch(
-                "https://localhost:7166/api/Ventas",
+                API_URL + "/api/Ventas",
                 {
                     method: "POST",
                     headers: {
@@ -357,7 +358,7 @@ export default function Ventas() {
                 <div className="flex flex-wrap items-center justify-between gap-4 px-8 py-6">
                     <div>
                         <p className="text-sm font-medium text-blue-600">
-                            Gestión de inventario
+                            GestiÃ³n de inventario
                         </p>
 
                         <h1 className="mt-1 text-3xl font-bold text-slate-800">
@@ -365,7 +366,7 @@ export default function Ventas() {
                         </h1>
 
                         <p className="mt-1 text-sm text-slate-500">
-                            Registra ventas y descuenta automáticamente el stock.
+                            Registra ventas y descuenta automÃ¡ticamente el stock.
                         </p>
                     </div>
 
@@ -375,13 +376,13 @@ export default function Ventas() {
                         }}
                         className="rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-600 shadow-sm transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600"
                     >
-                        ← Dashboard
+                        â† Dashboard
                     </button>
                 </div>
             </div>
 
             <section className="p-8">
-                {/* ESTADÍSTICAS */}
+                {/* ESTADÃSTICAS */}
                 <div className="mb-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                         <div className="flex items-center justify-between">
@@ -396,7 +397,7 @@ export default function Ventas() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-2xl">
-                                💰
+                                ðŸ’°
                             </div>
                         </div>
 
@@ -418,12 +419,12 @@ export default function Ventas() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-2xl">
-                                📦
+                                ðŸ“¦
                             </div>
                         </div>
 
                         <p className="mt-4 text-xs text-slate-400">
-                            Productos en catálogo
+                            Productos en catÃ¡logo
                         </p>
                     </div>
 
@@ -440,7 +441,7 @@ export default function Ventas() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-50 text-2xl">
-                                👥
+                                ðŸ‘¥
                             </div>
                         </div>
 
@@ -484,7 +485,7 @@ export default function Ventas() {
                 {mensaje && (
                     <div className="mb-5 flex items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm font-medium text-emerald-700">
                         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 font-bold">
-                            ✓
+                            âœ“
                         </span>
 
                         {mensaje}
@@ -508,7 +509,7 @@ export default function Ventas() {
                         <div className="border-b border-slate-100 px-6 py-5">
                             <div className="flex items-center gap-3">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-xl">
-                                    💰
+                                    ðŸ’°
                                 </div>
 
                                 <div>
@@ -666,7 +667,7 @@ export default function Ventas() {
                                                                         producto.stock <= 0
                                                                     }
                                                                 >
-                                                                    {producto.nombre} — Stock:{" "}
+                                                                    {producto.nombre} â€” Stock:{" "}
                                                                     {producto.stock}
                                                                 </option>
                                                             )
@@ -812,7 +813,7 @@ export default function Ventas() {
                         {ventas.length === 0 ? (
                             <div className="rounded-2xl border border-slate-200 bg-white p-12 text-center shadow-sm">
                                 <div className="text-5xl">
-                                    💰
+                                    ðŸ’°
                                 </div>
 
                                 <p className="mt-4 font-semibold text-slate-600">
@@ -820,7 +821,7 @@ export default function Ventas() {
                                 </p>
 
                                 <p className="mt-1 text-sm text-slate-400">
-                                    Las ventas que registres aparecerán aquí.
+                                    Las ventas que registres aparecerÃ¡n aquÃ­.
                                 </p>
                             </div>
                         ) : (
@@ -833,7 +834,7 @@ export default function Ventas() {
                                     <div className="flex flex-wrap items-center justify-between gap-5 border-b border-slate-100 bg-slate-50 px-6 py-5">
                                         <div className="flex items-center gap-4">
                                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-xl">
-                                                💰
+                                                ðŸ’°
                                             </div>
 
                                             <div>
@@ -917,7 +918,7 @@ export default function Ventas() {
                                                                 <td className="px-5 py-4">
                                                                     <div className="flex items-center gap-3">
                                                                         <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50">
-                                                                            📦
+                                                                            ðŸ“¦
                                                                         </div>
 
                                                                         <span className="text-sm font-semibold text-slate-700">
@@ -962,3 +963,4 @@ export default function Ventas() {
         </main>
     );
 }
+

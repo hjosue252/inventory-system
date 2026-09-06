@@ -1,5 +1,6 @@
-"use client";
+﻿"use client";
 
+import { API_URL } from "../../lib/api";
 import { FormEvent, useEffect, useState } from "react";
 
 interface ReporteVenta {
@@ -77,7 +78,7 @@ export default function Reportes() {
 
         try {
             const url =
-                `https://localhost:7166/api/Reportes/ventas` +
+                `${API_URL}/api/Reportes/ventas` +
                 `?fechaInicio=${fechaInicio}` +
                 `&fechaFin=${fechaFin}`;
 
@@ -114,7 +115,7 @@ export default function Reportes() {
 
             if (data.length === 0) {
                 setMensaje(
-                    "No se encontraron ventas en el período seleccionado."
+                    "No se encontraron ventas en el perÃ­odo seleccionado."
                 );
             } else {
                 setMensaje(
@@ -148,7 +149,7 @@ export default function Reportes() {
                 <div className="flex flex-wrap items-center justify-between gap-4 px-8 py-6">
                     <div>
                         <p className="text-sm font-medium text-blue-600">
-                            Análisis de ventas
+                            AnÃ¡lisis de ventas
                         </p>
 
                         <h1 className="mt-1 text-3xl font-bold text-slate-800">
@@ -156,7 +157,7 @@ export default function Reportes() {
                         </h1>
 
                         <p className="mt-1 text-sm text-slate-500">
-                            Consulta y analiza las ventas realizadas por período.
+                            Consulta y analiza las ventas realizadas por perÃ­odo.
                         </p>
                     </div>
 
@@ -166,7 +167,7 @@ export default function Reportes() {
                         }}
                         className="rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-600 shadow-sm transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600"
                     >
-                        ← Dashboard
+                        â† Dashboard
                     </button>
                 </div>
             </div>
@@ -177,7 +178,7 @@ export default function Reportes() {
                     <div className="border-b border-slate-100 px-6 py-5">
                         <div className="flex items-center gap-3">
                             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-xl">
-                                📊
+                                ðŸ“Š
                             </div>
 
                             <div>
@@ -186,7 +187,7 @@ export default function Reportes() {
                                 </h2>
 
                                 <p className="mt-1 text-sm text-slate-500">
-                                    Selecciona el período que deseas consultar.
+                                    Selecciona el perÃ­odo que deseas consultar.
                                 </p>
                             </div>
                         </div>
@@ -246,7 +247,7 @@ export default function Reportes() {
                 {mensaje && (
                     <div className="mb-5 flex items-center gap-3 rounded-xl border border-blue-200 bg-blue-50 px-5 py-4 text-sm font-medium text-blue-700">
                         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-100 font-bold">
-                            ✓
+                            âœ“
                         </span>
 
                         {mensaje}
@@ -281,12 +282,12 @@ export default function Reportes() {
                                 </div>
 
                                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-2xl">
-                                    💰
+                                    ðŸ’°
                                 </div>
                             </div>
 
                             <p className="mt-4 text-xs text-slate-400">
-                                En el período seleccionado
+                                En el perÃ­odo seleccionado
                             </p>
                         </div>
 
@@ -304,7 +305,7 @@ export default function Reportes() {
                                 </div>
 
                                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-50 text-2xl">
-                                    📦
+                                    ðŸ“¦
                                 </div>
                             </div>
 
@@ -327,12 +328,12 @@ export default function Reportes() {
                                 </div>
 
                                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-2xl">
-                                    💵
+                                    ðŸ’µ
                                 </div>
                             </div>
 
                             <p className="mt-4 text-xs text-slate-400">
-                                Ingresos del período
+                                Ingresos del perÃ­odo
                             </p>
                         </div>
                     </div>
@@ -387,7 +388,7 @@ export default function Reportes() {
                                         <td className="px-6 py-5">
                                             <div className="flex items-center gap-3">
                                                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50">
-                                                    💰
+                                                    ðŸ’°
                                                 </div>
 
                                                 <span className="text-sm font-bold text-slate-700">
@@ -431,7 +432,7 @@ export default function Reportes() {
                                             className="px-6 py-14 text-center"
                                         >
                                             <div className="text-5xl">
-                                                📊
+                                                ðŸ“Š
                                             </div>
 
                                             <p className="mt-4 font-semibold text-slate-600">
@@ -439,7 +440,7 @@ export default function Reportes() {
                                             </p>
 
                                             <p className="mt-1 text-sm text-slate-400">
-                                                Selecciona otro período para consultar resultados.
+                                                Selecciona otro perÃ­odo para consultar resultados.
                                             </p>
                                         </td>
                                     </tr>
@@ -452,3 +453,4 @@ export default function Reportes() {
         </main>
     );
 }
+

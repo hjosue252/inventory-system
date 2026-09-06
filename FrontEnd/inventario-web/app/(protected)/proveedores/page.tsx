@@ -1,5 +1,6 @@
-"use client";
+﻿"use client";
 
+import { API_URL } from "../../lib/api";
 import { FormEvent, useEffect, useState } from "react";
 
 interface Proveedor {
@@ -35,7 +36,7 @@ export default function Proveedores() {
 
         try {
             const response = await fetch(
-                "https://localhost:7166/api/Proveedores",
+                API_URL + "/api/Proveedores",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -99,8 +100,8 @@ export default function Proveedores() {
         try {
             const url =
                 editandoId === null
-                    ? "https://localhost:7166/api/Proveedores"
-                    : `https://localhost:7166/api/Proveedores/${editandoId}`;
+                    ? API_URL + "/api/Proveedores"
+                    : `${API_URL}/api/Proveedores/${editandoId}`;
 
             const method = editandoId === null ? "POST" : "PUT";
 
@@ -127,7 +128,7 @@ export default function Proveedores() {
 
             if (response.status === 403) {
                 setError(
-                    "No tienes permisos para realizar esta acción."
+                    "No tienes permisos para realizar esta acciÃ³n."
                 );
                 return;
             }
@@ -179,7 +180,7 @@ export default function Proveedores() {
 
     const eliminarProveedor = async (id: number) => {
         const confirmar = window.confirm(
-            "¿Estás seguro de que deseas eliminar este proveedor?"
+            "Â¿EstÃ¡s seguro de que deseas eliminar este proveedor?"
         );
 
         if (!confirmar) {
@@ -198,7 +199,7 @@ export default function Proveedores() {
 
         try {
             const response = await fetch(
-                `https://localhost:7166/api/Proveedores/${id}`,
+                `${API_URL}/api/Proveedores/${id}`,
                 {
                     method: "DELETE",
                     headers: {
@@ -247,7 +248,7 @@ export default function Proveedores() {
                 <div className="flex flex-wrap items-center justify-between gap-4 px-8 py-6">
                     <div>
                         <p className="text-sm font-medium text-blue-600">
-                            Gestión de proveedores
+                            GestiÃ³n de proveedores
                         </p>
 
                         <h1 className="mt-1 text-3xl font-bold text-slate-800">
@@ -265,13 +266,13 @@ export default function Proveedores() {
                         }}
                         className="rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-600 shadow-sm transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600"
                     >
-                        ← Dashboard
+                        â† Dashboard
                     </button>
                 </div>
             </div>
 
             <section className="p-8">
-                {/* Estadística */}
+                {/* EstadÃ­stica */}
                 <div className="mb-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                         <div className="flex items-center justify-between">
@@ -286,7 +287,7 @@ export default function Proveedores() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-2xl">
-                                🚚
+                                ðŸšš
                             </div>
                         </div>
 
@@ -304,7 +305,7 @@ export default function Proveedores() {
                         </h2>
 
                         <p className="mt-1 text-sm text-slate-500">
-                            Consulta y administra la información registrada.
+                            Consulta y administra la informaciÃ³n registrada.
                         </p>
                     </div>
 
@@ -339,7 +340,7 @@ export default function Proveedores() {
                             </h2>
 
                             <p className="mt-1 text-sm text-slate-500">
-                                Completa la información del proveedor.
+                                Completa la informaciÃ³n del proveedor.
                             </p>
                         </div>
 
@@ -358,7 +359,7 @@ export default function Proveedores() {
                                     onChange={(e) =>
                                         setNombre(e.target.value)
                                     }
-                                    placeholder="Ej. Proveedor Tecnológico S.A."
+                                    placeholder="Ej. Proveedor TecnolÃ³gico S.A."
                                     required
                                     maxLength={100}
                                     className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
@@ -367,7 +368,7 @@ export default function Proveedores() {
 
                             <div>
                                 <label className="mb-2 block text-sm font-semibold text-slate-700">
-                                    Correo electrónico
+                                    Correo electrÃ³nico
                                 </label>
 
                                 <input
@@ -384,7 +385,7 @@ export default function Proveedores() {
 
                             <div>
                                 <label className="mb-2 block text-sm font-semibold text-slate-700">
-                                    Teléfono
+                                    TelÃ©fono
                                 </label>
 
                                 <input
@@ -428,7 +429,7 @@ export default function Proveedores() {
                 {mensaje && (
                     <div className="mb-5 flex items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm font-medium text-emerald-700">
                         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 font-bold">
-                            ✓
+                            âœ“
                         </span>
 
                         {mensaje}
@@ -477,7 +478,7 @@ export default function Proveedores() {
                                         </th>
 
                                         <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wide text-slate-500">
-                                            Teléfono
+                                            TelÃ©fono
                                         </th>
 
                                         {role === "Admin" && (
@@ -501,7 +502,7 @@ export default function Proveedores() {
                                             <td className="px-6 py-5">
                                                 <div className="flex items-center gap-3">
                                                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-lg">
-                                                        🚚
+                                                        ðŸšš
                                                     </div>
 
                                                     <div>
@@ -559,7 +560,7 @@ export default function Proveedores() {
                                                 className="px-6 py-12 text-center"
                                             >
                                                 <div className="text-4xl">
-                                                    🚚
+                                                    ðŸšš
                                                 </div>
 
                                                 <p className="mt-3 font-semibold text-slate-600">
@@ -567,7 +568,7 @@ export default function Proveedores() {
                                                 </p>
 
                                                 <p className="mt-1 text-sm text-slate-400">
-                                                    Los proveedores que agregues aparecerán aquí.
+                                                    Los proveedores que agregues aparecerÃ¡n aquÃ­.
                                                 </p>
                                             </td>
                                         </tr>
@@ -581,3 +582,4 @@ export default function Proveedores() {
         </main>
     );
 }
+
