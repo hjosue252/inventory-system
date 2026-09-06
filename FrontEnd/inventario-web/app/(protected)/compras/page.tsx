@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { API_URL } from "../../lib/api";
 import { FormEvent, useEffect, useState } from "react";
@@ -206,7 +206,7 @@ export default function Compras() {
 
         if (detalleInvalido) {
             setError(
-                "Todos los productos deben tener una cantidad y precio de compra vÃ¡lidos."
+                "Todos los productos deben tener una cantidad y precio de compra válidos."
             );
             return;
         }
@@ -316,7 +316,7 @@ export default function Compras() {
                 <div className="flex flex-wrap items-center justify-between gap-4 px-8 py-6">
                     <div>
                         <p className="text-sm font-medium text-blue-600">
-                            GestiÃ³n de inventario
+                            Gestión de inventario
                         </p>
 
                         <h1 className="mt-1 text-3xl font-bold text-slate-800">
@@ -324,7 +324,7 @@ export default function Compras() {
                         </h1>
 
                         <p className="mt-1 text-sm text-slate-500">
-                            Registra compras y aumenta automÃ¡ticamente el stock.
+                            Registra compras y aumenta automáticamente el stock.
                         </p>
                     </div>
 
@@ -334,13 +334,13 @@ export default function Compras() {
                         }}
                         className="rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-600 shadow-sm transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600"
                     >
-                        â† Dashboard
+                        ← Dashboard
                     </button>
                 </div>
             </div>
 
             <section className="p-8">
-                {/* ESTADÃSTICAS */}
+                {/* ESTADÍSTICAS */}
                 <div className="mb-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                         <div className="flex items-center justify-between">
@@ -355,7 +355,7 @@ export default function Compras() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-2xl">
-                                ðŸ›’
+                                🛒
                             </div>
                         </div>
 
@@ -377,12 +377,12 @@ export default function Compras() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-2xl">
-                                ðŸ“¦
+                                📦
                             </div>
                         </div>
 
                         <p className="mt-4 text-xs text-slate-400">
-                            Productos en catÃ¡logo
+                            Productos en catálogo
                         </p>
                     </div>
 
@@ -399,7 +399,7 @@ export default function Compras() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-2xl">
-                                ðŸšš
+                                🚚
                             </div>
                         </div>
 
@@ -443,7 +443,7 @@ export default function Compras() {
                 {mensaje && (
                     <div className="mb-5 flex items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm font-medium text-emerald-700">
                         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 font-bold">
-                            âœ“
+                            ✓
                         </span>
 
                         {mensaje}
@@ -467,7 +467,7 @@ export default function Compras() {
                         <div className="border-b border-slate-100 px-6 py-5">
                             <div className="flex items-center gap-3">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-xl">
-                                    ðŸ›’
+                                    🛒
                                 </div>
 
                                 <div>
@@ -606,7 +606,7 @@ export default function Compras() {
                                                             key={producto.id}
                                                             value={producto.id}
                                                         >
-                                                            {producto.nombre} â€” Stock:{" "}
+                                                            {producto.nombre} — Stock:{" "}
                                                             {producto.stock}
                                                         </option>
                                                     ))}
@@ -733,7 +733,7 @@ export default function Compras() {
                         {compras.length === 0 ? (
                             <div className="rounded-2xl border border-slate-200 bg-white p-12 text-center shadow-sm">
                                 <div className="text-5xl">
-                                    ðŸ›’
+                                    🛒
                                 </div>
 
                                 <p className="mt-4 font-semibold text-slate-600">
@@ -741,7 +741,7 @@ export default function Compras() {
                                 </p>
 
                                 <p className="mt-1 text-sm text-slate-400">
-                                    Las compras que registres aparecerÃ¡n aquÃ­.
+                                    Las compras que registres aparecerán aquí.
                                 </p>
                             </div>
                         ) : (
@@ -754,7 +754,7 @@ export default function Compras() {
                                     <div className="flex flex-wrap items-center justify-between gap-5 border-b border-slate-100 bg-slate-50 px-6 py-5">
                                         <div className="flex items-center gap-4">
                                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-xl">
-                                                ðŸ›’
+                                                🛒
                                             </div>
 
                                             <div>
@@ -840,7 +840,7 @@ export default function Compras() {
                                                                 <td className="px-5 py-4">
                                                                     <div className="flex items-center gap-3">
                                                                         <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-50">
-                                                                            ðŸ“¦
+                                                                            📦
                                                                         </div>
 
                                                                         <span className="text-sm font-semibold text-slate-700">

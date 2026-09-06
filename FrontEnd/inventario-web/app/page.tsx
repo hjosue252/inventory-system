@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { API_URL } from "./lib/api";
 import { FormEvent, useState } from "react";
@@ -33,7 +33,7 @@ export default function Home() {
             const data = await response.json();
 
             if (!response.ok) {
-                setMensaje(data.message || "Correo o contraseÃ±a incorrectos.");
+                setMensaje(data.message || "Correo o contraseña incorrectos.");
                 return;
             }
 
@@ -46,7 +46,7 @@ export default function Home() {
             console.error(error);
 
             setMensaje(
-                "No se pudo conectar con el servidor. Verifica que la API estÃ© ejecutÃ¡ndose."
+                "No se pudo conectar con el servidor. Verifica que la API esté ejecutándose."
             );
         } finally {
             setCargando(false);
@@ -61,13 +61,13 @@ export default function Home() {
                 </h1>
 
                 <p className="mb-6 text-center text-gray-500">
-                    Iniciar sesiÃ³n
+                    Iniciar sesión
                 </p>
 
                 <form onSubmit={handleLogin} className="space-y-4">
                     <div>
                         <label className="mb-1 block text-sm font-medium">
-                            Correo electrÃ³nico
+                            Correo electrónico
                         </label>
 
                         <input
@@ -82,7 +82,7 @@ export default function Home() {
 
                     <div>
                         <label className="mb-1 block text-sm font-medium">
-                            ContraseÃ±a
+                            Contraseña
                         </label>
 
                         <input
@@ -100,7 +100,7 @@ export default function Home() {
                         disabled={cargando}
                         className="w-full rounded-md bg-blue-600 p-3 font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
                     >
-                        {cargando ? "Iniciando sesiÃ³n..." : "Iniciar sesiÃ³n"}
+                        {cargando ? "Iniciando sesión..." : "Iniciar sesión"}
                     </button>
                 </form>
 

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 
@@ -28,7 +28,7 @@ export default function ProtectedRoute({
         return (
             <main className="flex min-h-screen items-center justify-center bg-gray-100">
                 <div className="rounded-lg bg-white p-6 shadow">
-                    Verificando sesiÃ³n...
+                    Verificando sesión...
                 </div>
             </main>
         );

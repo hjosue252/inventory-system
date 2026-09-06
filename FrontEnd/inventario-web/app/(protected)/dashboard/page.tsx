@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { API_URL } from "../../lib/api";
 import { useEffect, useState } from "react";
@@ -208,7 +208,7 @@ export default function Dashboard() {
                             onClick={cerrarSesion}
                             className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 transition hover:border-red-200 hover:bg-red-50 hover:text-red-600"
                         >
-                            Cerrar sesiÃ³n
+                            Cerrar sesión
                         </button>
                     </div>
                 </div>
@@ -216,7 +216,7 @@ export default function Dashboard() {
 
             {/* CONTENIDO */}
             <section className="p-8">
-                {/* ESTADÃSTICAS */}
+                {/* ESTADÍSTICAS */}
                 <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
                     {/* PRODUCTOS */}
                     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
@@ -234,7 +234,7 @@ export default function Dashboard() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-2xl">
-                                ðŸ“¦
+                                📦
                             </div>
                         </div>
 
@@ -259,7 +259,7 @@ export default function Dashboard() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-2xl">
-                                ðŸ“Š
+                                📊
                             </div>
                         </div>
 
@@ -284,12 +284,12 @@ export default function Dashboard() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-50 text-2xl">
-                                ðŸ’°
+                                💰
                             </div>
                         </div>
 
                         <p className="mt-4 text-xs text-slate-400">
-                            Ãšltimos 30 dÃ­as
+                            Últimos 30 días
                         </p>
                     </div>
 
@@ -311,12 +311,12 @@ export default function Dashboard() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-2xl">
-                                ðŸ’µ
+                                💵
                             </div>
                         </div>
 
                         <p className="mt-4 text-xs text-slate-400">
-                            Ãšltimos 30 dÃ­as
+                            Últimos 30 días
                         </p>
                     </div>
                 </div>
@@ -332,7 +332,7 @@ export default function Dashboard() {
                                 </h2>
 
                                 <p className="mt-1 text-sm text-slate-500">
-                                    Productos que requieren atenciÃ³n
+                                    Productos que requieren atención
                                 </p>
                             </div>
 
@@ -342,20 +342,20 @@ export default function Dashboard() {
                                 }
                                 className="text-sm font-semibold text-blue-600 transition hover:text-blue-700"
                             >
-                                Ver productos â†’
+                                Ver productos →
                             </button>
                         </div>
 
                         <div className="p-6">
                             {cargando ? (
                                 <div className="py-8 text-center text-sm text-slate-400">
-                                    Cargando informaciÃ³n...
+                                    Cargando información...
                                 </div>
                             ) : productosStockBajo.length ===
                                 0 ? (
                                 <div className="rounded-xl bg-emerald-50 p-6 text-center">
                                     <p className="text-2xl">
-                                        âœ“
+                                        ✓
                                     </p>
 
                                     <p className="mt-2 font-semibold text-emerald-700">
@@ -425,11 +425,11 @@ export default function Dashboard() {
                         </div>
                     </div>
 
-                    {/* ACCESOS RÃPIDOS */}
+                    {/* ACCESOS RÁPIDOS */}
                     <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
                         <div className="border-b border-slate-100 px-6 py-5">
                             <h2 className="text-lg font-bold text-slate-800">
-                                Accesos rÃ¡pidos
+                                Accesos rápidos
                             </h2>
 
                             <p className="mt-1 text-sm text-slate-500">
@@ -448,7 +448,7 @@ export default function Dashboard() {
                                         className="flex w-full items-center gap-4 rounded-xl border border-slate-200 p-4 text-left transition hover:border-blue-200 hover:bg-blue-50"
                                     >
                                         <span className="text-2xl">
-                                            ðŸ“¦
+                                            📦
                                         </span>
 
                                         <div>
@@ -469,7 +469,7 @@ export default function Dashboard() {
                                         className="flex w-full items-center gap-4 rounded-xl border border-slate-200 p-4 text-left transition hover:border-blue-200 hover:bg-blue-50"
                                     >
                                         <span className="text-2xl">
-                                            ðŸšš
+                                            🚚
                                         </span>
 
                                         <div>
@@ -490,7 +490,7 @@ export default function Dashboard() {
                                         className="flex w-full items-center gap-4 rounded-xl border border-slate-200 p-4 text-left transition hover:border-blue-200 hover:bg-blue-50"
                                     >
                                         <span className="text-2xl">
-                                            ðŸ‘¥
+                                            👥
                                         </span>
 
                                         <div>
@@ -514,7 +514,7 @@ export default function Dashboard() {
                                 className="flex w-full items-center gap-4 rounded-xl border border-slate-200 p-4 text-left transition hover:border-blue-200 hover:bg-blue-50"
                             >
                                 <span className="text-2xl">
-                                    ðŸ›’
+                                    🛒
                                 </span>
 
                                 <div>
@@ -536,7 +536,7 @@ export default function Dashboard() {
                                 className="flex w-full items-center gap-4 rounded-xl border border-slate-200 p-4 text-left transition hover:border-blue-200 hover:bg-blue-50"
                             >
                                 <span className="text-2xl">
-                                    ðŸ’°
+                                    💰
                                 </span>
 
                                 <div>
@@ -558,7 +558,7 @@ export default function Dashboard() {
                                 className="flex w-full items-center gap-4 rounded-xl border border-slate-200 p-4 text-left transition hover:border-blue-200 hover:bg-blue-50"
                             >
                                 <span className="text-2xl">
-                                    ðŸ“ˆ
+                                    📈
                                 </span>
 
                                 <div>
@@ -584,7 +584,7 @@ export default function Dashboard() {
                             </h2>
 
                             <p className="mt-1 text-sm text-slate-500">
-                                Actividad de los Ãºltimos 30 dÃ­as
+                                Actividad de los últimos 30 días
                             </p>
                         </div>
 
@@ -594,7 +594,7 @@ export default function Dashboard() {
                             }
                             className="text-sm font-semibold text-blue-600 transition hover:text-blue-700"
                         >
-                            Ver reporte â†’
+                            Ver reporte →
                         </button>
                     </div>
 
@@ -606,7 +606,7 @@ export default function Dashboard() {
                         ) : ventas.length === 0 ? (
                             <div className="py-8 text-center">
                                 <p className="text-3xl">
-                                    ðŸ“Š
+                                    📊
                                 </p>
 
                                 <p className="mt-2 font-semibold text-slate-600">
@@ -614,7 +614,7 @@ export default function Dashboard() {
                                 </p>
 
                                 <p className="mt-1 text-sm text-slate-400">
-                                    Las nuevas ventas aparecerÃ¡n aquÃ­.
+                                    Las nuevas ventas aparecerán aquí.
                                 </p>
                             </div>
                         ) : (

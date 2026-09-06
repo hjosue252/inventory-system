@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { API_URL } from "../../lib/api";
 import { FormEvent, useEffect, useState } from "react";
@@ -128,7 +128,7 @@ export default function Clientes() {
 
             if (response.status === 403) {
                 setError(
-                    "No tienes permisos para realizar esta acciÃ³n."
+                    "No tienes permisos para realizar esta acción."
                 );
                 return;
             }
@@ -180,7 +180,7 @@ export default function Clientes() {
 
     const eliminarCliente = async (id: number) => {
         const confirmar = window.confirm(
-            "Â¿EstÃ¡s seguro de que deseas eliminar este cliente?"
+            "¿Estás seguro de que deseas eliminar este cliente?"
         );
 
         if (!confirmar) {
@@ -248,7 +248,7 @@ export default function Clientes() {
                 <div className="flex flex-wrap items-center justify-between gap-4 px-8 py-6">
                     <div>
                         <p className="text-sm font-medium text-blue-600">
-                            GestiÃ³n de clientes
+                            Gestión de clientes
                         </p>
 
                         <h1 className="mt-1 text-3xl font-bold text-slate-800">
@@ -256,7 +256,7 @@ export default function Clientes() {
                         </h1>
 
                         <p className="mt-1 text-sm text-slate-500">
-                            Administra la informaciÃ³n de tus clientes.
+                            Administra la información de tus clientes.
                         </p>
                     </div>
 
@@ -266,13 +266,13 @@ export default function Clientes() {
                         }}
                         className="rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-600 shadow-sm transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600"
                     >
-                        â† Dashboard
+                        ← Dashboard
                     </button>
                 </div>
             </div>
 
             <section className="p-8">
-                {/* EstadÃ­stica */}
+                {/* Estadística */}
                 <div className="mb-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                     <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                         <div className="flex items-center justify-between">
@@ -287,7 +287,7 @@ export default function Clientes() {
                             </div>
 
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-2xl">
-                                ðŸ‘¥
+                                👥
                             </div>
                         </div>
 
@@ -340,7 +340,7 @@ export default function Clientes() {
                             </h2>
 
                             <p className="mt-1 text-sm text-slate-500">
-                                Completa la informaciÃ³n del cliente.
+                                Completa la información del cliente.
                             </p>
                         </div>
 
@@ -359,7 +359,7 @@ export default function Clientes() {
                                     onChange={(e) =>
                                         setNombre(e.target.value)
                                     }
-                                    placeholder="Ej. Juan PÃ©rez"
+                                    placeholder="Ej. Juan Pérez"
                                     required
                                     maxLength={100}
                                     className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
@@ -368,7 +368,7 @@ export default function Clientes() {
 
                             <div>
                                 <label className="mb-2 block text-sm font-semibold text-slate-700">
-                                    Correo electrÃ³nico
+                                    Correo electrónico
                                 </label>
 
                                 <input
@@ -385,7 +385,7 @@ export default function Clientes() {
 
                             <div>
                                 <label className="mb-2 block text-sm font-semibold text-slate-700">
-                                    TelÃ©fono
+                                    Teléfono
                                 </label>
 
                                 <input
@@ -425,11 +425,11 @@ export default function Clientes() {
                     </div>
                 )}
 
-                {/* Mensaje de Ã©xito */}
+                {/* Mensaje de éxito */}
                 {mensaje && (
                     <div className="mb-5 flex items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm font-medium text-emerald-700">
                         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 font-bold">
-                            âœ“
+                            ✓
                         </span>
 
                         {mensaje}
@@ -478,7 +478,7 @@ export default function Clientes() {
                                         </th>
 
                                         <th className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wide text-slate-500">
-                                            TelÃ©fono
+                                            Teléfono
                                         </th>
 
                                         {role === "Admin" && (
@@ -502,7 +502,7 @@ export default function Clientes() {
                                             <td className="px-6 py-5">
                                                 <div className="flex items-center gap-3">
                                                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-lg">
-                                                        ðŸ‘¤
+                                                        👤
                                                     </div>
 
                                                     <div>
@@ -558,7 +558,7 @@ export default function Clientes() {
                                                 className="px-6 py-12 text-center"
                                             >
                                                 <div className="text-4xl">
-                                                    ðŸ‘¥
+                                                    👥
                                                 </div>
 
                                                 <p className="mt-3 font-semibold text-slate-600">
@@ -566,7 +566,7 @@ export default function Clientes() {
                                                 </p>
 
                                                 <p className="mt-1 text-sm text-slate-400">
-                                                    Los clientes que agregues aparecerÃ¡n aquÃ­.
+                                                    Los clientes que agregues aparecerán aquí.
                                                 </p>
                                             </td>
                                         </tr>
